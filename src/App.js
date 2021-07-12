@@ -1,24 +1,45 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import NavBar from './components/navBar';
+import { LandingPage } from './components/home';
+import { Departments } from './components/departments';
+import { ModuleList } from './components/moduleList';
+import { Module } from './components/dashboard/module';
+import { Form } from './components/form';
 import './App.css';
+
+import { ThemeProvider, createTheme } from '@material-ui/core/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#20B2AA',
+    },
+    secondary: {
+      main: '#F1B07A',
+    },
+    background: {
+      default: "#F8F8FB"
+    }
+  },
+  shadows: ["none"]
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <NavBar />
+        <Switch>
+          <Route path="/" exact component={LandingPage} />
+          <Route path="/departments" exact component={Departments} />
+          <Route path="/departments/:id" exact component={ModuleList} />
+          <Route path="/modules/:id" exact component={Module} />
+          <Route path="/form" exact component={Form} />
+        </Switch>
+      </ThemeProvider>
+    </Router>
   );
 }
 
