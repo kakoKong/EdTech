@@ -62,7 +62,7 @@ export const Departments = () => {
                 <Grid justifyContent="center" spacing={4} container>
                     {departments.map( dep => {
                         return (
-                        <Grid key={dep._id} item xs={12} sm={4}>
+                        <Grid key={dep._id} item xs={12} sm={12}>
                             <DepartmentCard  department={dep}/>
                         </Grid>
                         )

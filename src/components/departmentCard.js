@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
+import { Grid } from '@material-ui/core/'
 import Typography from '@material-ui/core/Typography';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import { Link } from 'react-router-dom';
@@ -12,7 +13,8 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    textAlign: 'center'
+    textAlign: 'center',
+    border: '2px solid #a3f0eb'
   },
   bullet: {
     display: 'inline-block',
@@ -20,7 +22,7 @@ const useStyles = makeStyles({
     transform: 'scale(0.8)',
   },
   title: {
-    fontSize: 14,
+    padding: '1em',
   },
   pos: {
     marginBottom: 12,
@@ -34,7 +36,10 @@ const useStyles = makeStyles({
   },
   button: {
     margin: '.8em',
-}
+  },
+  action: {
+    padding: '1em',
+  }
 });
 
 export default function DepartmentCard(props) {
@@ -45,16 +50,19 @@ export default function DepartmentCard(props) {
         <Card className={classes.root}>
 
         <Link className={classes.link} to={`/departments/${_id}`}> 
-          <CardActionArea>
-              <Typography className={classes.title} color="textSecondary" gutterBottom>
-              Department of
-              </Typography>
-              <Typography variant="h5" color="primary" component="h2">
+          <CardActionArea className={classes.action}>
+            <Grid style={{padding: '0 2em'}} alignItems="center" container>
+              <Grid item sm={10}>
+              <Typography align="left" variant="h5" color="primary">
               {dName}
               </Typography>
-              <Typography className={classes.pos} color="textSecondary">
+              </Grid>
+              <Grid item sm={2}>
+              <Typography align="right" color="textSecondary">
               {reviewCount} Reviews
               </Typography>
+              </Grid>
+            </Grid>
           </CardActionArea>
         </Link>
         </Card>
