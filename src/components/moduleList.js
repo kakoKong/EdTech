@@ -61,7 +61,7 @@ export const ModuleList = () => {
                 {modules.filter(module => module.yearStudy === 1).map(module => {
                     return (
 
-                        <Link className={classes.link} to="/modules/:id">
+                        <Link className={classes.link} to={`/module/${module._id}`} >
                         <ListItem button>
                                 <ListItemIcon>
                                     <Filter1 />
@@ -82,7 +82,7 @@ export const ModuleList = () => {
                 <ListSubheader>Year 2</ListSubheader>
                 {modules.filter(module => module.yearStudy === 2).map(module => {
                     return (
-                        <Link className={classes.link} to="/modules/:id">
+                        <Link className={classes.link} to={`/module/${module._id}`}>
                         <ListItem button>
                             <ListItemIcon>
                                 <Filter2 />
@@ -102,7 +102,7 @@ export const ModuleList = () => {
                 <ListSubheader>Year 3</ListSubheader>
                 {modules.filter(module => module.yearStudy === 3).map(module => {
                     return (
-                        <Link className={classes.link} to="/modules/:id">
+                        <Link className={classes.link} to={`/module/${module._id}`}>
                         <ListItem button>
                             <ListItemIcon>
                                 <Filter3 />

@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Contribute() {
+export default function Contribute({contribute}) {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -49,7 +49,7 @@ export default function Contribute() {
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography variant="h4" color='"textSecondary"'>
-            62
+            {contribute}
           </Typography>
 
           <Typography component="h5" variant="subtitle1" color="textSecondary" >
