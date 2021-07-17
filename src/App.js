@@ -5,8 +5,8 @@ import NavBar from './components/navBar';
 import { LandingPage } from './components/home';
 import { Departments } from './components/departments';
 import { ModuleList } from './components/moduleList';
-import { Module } from './components/dashboard/module';
-import { Form } from './components/form';
+import { Module } from './components/dashboard';
+import Form from './components/form/';
 import './App.css';
 
 import { ThemeProvider, createTheme } from '@material-ui/core/styles';
@@ -35,7 +35,7 @@ function App() {
           <Route path="/" exact component={LandingPage} />
           <Route path="/departments" exact component={Departments} />
           <Route path="/departments/:id" exact component={ModuleList} />
-          <Route path="/modules/:id" exact component={Module} />
+          <Route path="/module/:id" exact component={Module} />
           <Route path="/form" exact component={Form} />
         </Switch>
       </ThemeProvider>

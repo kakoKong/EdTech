@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Grade() {
+export default function Grade({ mark }) {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -49,7 +49,7 @@ export default function Grade() {
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography variant="h4" color='"textSecondary"'>
-            68%
+            {mark}%
           </Typography>
 
           <Typography component="h5" variant="subtitle1" color="textSecondary" >

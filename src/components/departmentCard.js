@@ -38,7 +38,7 @@ const useStyles = makeStyles({
 });
 
 export default function DepartmentCard(props) {
-    const { _id, dName, description, reviewCount } = props.department
+    const { _id, dName, reviewCount } = props.department
     const classes = useStyles();
 
     return (

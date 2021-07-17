@@ -148,6 +148,12 @@ export default function NavBar() {
                     Write Review
                 </Link>
             </MenuItem>
+            <Divider orientation="vertical" flexItem />
+            <MenuItem>
+                <Link to='/module/:id' className={classes.link}>
+                    Test Module
+                </Link>
+            </MenuItem>
             <div className={classes.search}>
                 <div className={classes.searchIcon}>
                 <SearchIcon />

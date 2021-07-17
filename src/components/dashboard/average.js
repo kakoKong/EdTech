@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Average() {
+export default function Average({ predictedMark }) {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -49,7 +49,7 @@ export default function Average() {
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography variant="h4" color='"textSecondary"'>
-            72%
+            {predictedMark}%
           </Typography>
 
           <Typography component="h5" variant="subtitle1" color="textSecondary">

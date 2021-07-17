@@ -34,8 +34,12 @@ const useRowStyles = makeStyles((theme) => ({
       backgroundColor: 'black',
   },
   avatar: {
-      marginTop: '8px',
-  }
+    backgroundColor: '#90B0C0',
+    width: 60,
+    height: 60,
+    margin: 'auto',
+    marginBottom: '.5em'
+  },
 }));
 
 function createData(name, expectedGrade, grade) {
@@ -75,12 +79,11 @@ function Row(props) {
               <Grid justifyContent="center" alignItem="center" spacing={6} container>
                 <Grid item>
                     <Avatar className={classes.avatar} >K</Avatar>
-                    </Grid>
-                    <Grid item>
                     <Paper className={classes.paper} variant="outlined">
-                        <Typography variant="subtitle1">
+                        <Typography align="center" variant="subtitle1">
                             I hate this shit, This module is such a bs I dont even know
-                            why am I studying here
+                            why am I studying here, I would recommend you to start coursework asap
+                            since it will drain your energy
                         </Typography>
                     </Paper>
                     </Grid>
@@ -112,10 +115,6 @@ Row.propTypes = {
 };
 
 const rows = [
-    createData('User1', 62, 71),
-    createData('User2', 44, 50),
-    createData('User3', 75, 62),
-    createData('User4', 62, 55),
 ];
 
 export default function Review() {
