@@ -17,6 +17,9 @@ const useStyle = makeStyles((theme) => ({
         width: '100%', // Fix IE 11 issue.
         marginTop: theme.spacing(3),
       },
+    container: {
+        backgroundColor: 'black'
+    }
 }))
 
 
@@ -58,11 +61,11 @@ export const Departments = () => {
     return (
         <>
         <div className={classes.head}>
-            <Container maxWidth="md">
+            <Container className={classes.container} maxWidth="md">
                 <Grid justifyContent="center" spacing={4} container>
                     {departments.map( dep => {
                         return (
-                        <Grid key={dep._id} item xs={12} sm={12}>
+                        <Grid key={dep._id} item xs={12} sm={4}>
                             <DepartmentCard  department={dep}/>
                         </Grid>
                         )

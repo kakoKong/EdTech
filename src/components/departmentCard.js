@@ -38,7 +38,7 @@ const useStyles = makeStyles({
     margin: '.8em',
   },
   action: {
-    padding: '1em',
+    padding: '2em',
   }
 });
 
@@ -51,18 +51,15 @@ export default function DepartmentCard(props) {
 
         <Link className={classes.link} to={`/departments/${_id}`}> 
           <CardActionArea className={classes.action}>
-            <Grid style={{padding: '0 2em'}} alignItems="center" container>
-              <Grid item sm={10}>
-              <Typography align="left" variant="h5" color="primary">
+              <Typography variant="subtitle2" color="textSecondary">
+              Department of
+              </Typography>
+              <Typography variant="h5" color="primary">
               {dName}
               </Typography>
-              </Grid>
-              <Grid item sm={2}>
-              <Typography align="right" color="textSecondary">
+              <Typography color="textSecondary">
               {reviewCount} Reviews
               </Typography>
-              </Grid>
-            </Grid>
           </CardActionArea>
         </Link>
         </Card>
